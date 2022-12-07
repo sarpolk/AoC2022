@@ -16,20 +16,24 @@ curDir[[1]][c("path", "size")] <- c("", "0")
   
 for (x in dat[1:length(dat)]) {
   cmd <- substr(x, 1, 4)
-  curDirIdx <- match(curDir, dirList)
   
   if (cmd == "$ cd"){
     dirName <- substr(x, 6, nchar(x))
     if (dirName == "..") {
+      # go up
       curPath <- sub("/[^/]+$", "", curDir[[1]]["path"])
       curDir[[1]] <- dirList[[which(rapply(dirList, function(x) head(x, 1)) == curPath)]]
+      
     } else {
+      # go down
       curPath <- paste0(curDir[[1]]["path"], "/", dirName)
       curDir[[1]] <- dirList[[which(rapply(dirList, function(x) head(x, 1)) == curPath)]]
+      
     }
     
   } else if (cmd == "$ ls") {
     # don't do anything
+    
   } else if (cmd == "dir ") { 
     # assuming i never need to check again if a specific dir exists
     dirName <- substr(x, 5, nchar(x))
