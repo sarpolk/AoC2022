@@ -1,7 +1,7 @@
 # --- Day 2: Rock Paper Scissors ---
 
 library(tidyverse)
-setwd("/Volumes/FB-LIP/Plasticity/STUDIES/Sarah/Misc/AdventOfCode2022/day02")
+setwd("/Users/spolk/Desktop/AdventOfCode2022/day02")
 
 dat <- read.csv("data.txt", header = F)
 dat <- dat %>% 

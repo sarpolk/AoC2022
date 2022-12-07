@@ -1,6 +1,6 @@
 # --- Day 4: Camp Cleanup ---
 
-setwd("/Volumes/FB-LIP/Plasticity/STUDIES/Sarah/Misc/AdventOfCode2022/day04")
+setwd("/Users/spolk/Desktop/AdventOfCode2022/day04")
 
 dat <- data.frame(assignments = readLines("data.txt"))
 dat %>% 

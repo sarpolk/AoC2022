@@ -1,6 +1,6 @@
 # --- Day 3: Rucksack Reorganization ---
 
-setwd("/Volumes/FB-LIP/Plasticity/STUDIES/Sarah/Misc/AdventOfCode2022/day03")
+setwd("/Users/spolk/Desktop/AdventOfCode2022/day03")
 
 dat <- readLines("data.txt")
 priorities <- c(letters, toupper(letters))

@@ -1,6 +1,6 @@
 # --- Day 5: Supply Stacks ---
 
-setwd("/Volumes/FB-LIP/Plasticity/STUDIES/Sarah/Misc/AdventOfCode2022/day05")
+setwd("/Users/spolk/Desktop/AdventOfCode2022/day05")
 
 dat <- data.frame(x = readLines("data.txt"))
 breakLine <- which(dat$x == "")

@@ -1,6 +1,6 @@
 # --- Day 1: Calorie Counting ---
 
-setwd("/Volumes/FB-LIP/Plasticity/STUDIES/Sarah/Misc/AdventOfCode2022/day01")
+setwd("/Users/spolk/Desktop/AdventOfCode2022/day01")
 
 dat <- readLines("data.txt")
 blanks <- which(dat == "")
