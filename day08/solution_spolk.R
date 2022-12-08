@@ -49,7 +49,7 @@ sum(trees != 0)
 # --- Part Two ---
 
 getRowsScore <- function(curRow) {
-  #run getTree function across rows
+  #run getTreeScore function across rows
   sapply(curRow, getTreeScore, curRow = curRow)
   
   #update indices
