@@ -6,23 +6,31 @@ dat <- readLines("data.txt")
 dat <- t(matrix(as.numeric(unlist(str_split(dat, ""))), nrow = length(dat), ncol = nchar(dat[1])))
 
 getRows <- function(curRow) {
+  #run getTree function across rows
   sapply(curRow, getTree, curRow = curRow)
+  
+  #update indices
   i <<- i + 1
   iTree <<- 1
+  
+  #get output
   return(trees)
 }
 
 getTree <- function(curTree, curRow) {
+  #find which trees are blocking my view
   tallerTrees <- curTree <= curRow 
   
+  #find trees to the right and left of the current tree
   treesR <- if (iTree != 1) which(1:nrow(dat) < iTree) else 0
   treesL <- if (iTree != nrow(dat)) which(1:nrow(dat) > iTree) else 0
   
+  #subtract from visibility score if there's a tree blocking from the right and/or the left
   if (sum(treesR) != 0) {if (sum(tallerTrees[treesR]) > 0) trees[i, iTree] <<- trees[i, iTree] - 1}
   if (sum(treesL) != 0) {if (sum(tallerTrees[treesL]) > 0) trees[i, iTree] <<- trees[i, iTree] - 1}
   
+  #update tree index
   iTree <<- iTree + 1
-  
 }
 
 #create tree matrix fully visible
